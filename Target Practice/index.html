@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello!</title>
+  <link rel="stylesheet" type="text/css" href="style.css"></link>
+
+  <script id = "vertex-shader" type = "x-shader/x-vertex">#version 300 es
+  in vec4 vPosition;
+  void main(){
+    gl_Position = vPosition;
+  }
+  </script>
+  <script id = "fragment-shader" type = "x-shader/x-fragment">#version 300 es
+  precision mediump float;
+  out vec4 fragColor;
+  void main(){
+    fragColor = vec4(0.8, 0.3, 0.3, 1.0);
+  }
+  </script>
+  <script type = "module" src = "hellofunctions.js"></script>
+</head>
+<body>
+<div class="header">
+  Target Practice
+</div>
+<div class="canvas">
+<canvas id = "gl-canvas" width="1200" height="600">
+  Sorry; your web browser doesn't support HTML5's canvas element.
+</canvas>
+</div>
+
+<div class="text">
+  <div id="details">Click on all the squares to win the game! Press "m" to make the squares move.</div>
+  <div id="score">Remaining Squares: 0</div>
+</div>
+<div class="resetButton">
+  <input id="resetButton" type="button" value="Reset Game"></input>
+</div>
+</body>
+</html>
